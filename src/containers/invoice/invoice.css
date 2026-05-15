@@ -1,0 +1,78 @@
+@import '../../styles/styles.css';
+
+.create_invoice {
+    text-align: right;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.table_invoices {
+    overflow-x: auto;
+}
+
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal {
+    position: relative;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-height: 85vh;
+    overflow-y: auto;
+    width: min(1100px, 95vw);
+}
+
+
+.other-invoice {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    width: 100%;
+}
+
+.item-field {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 2px;
+}
+
+#addLineBtn {
+    display: block;
+    margin-top: 10px;
+}
+
+.invoice-summary {
+    margin-top: 14px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: #fafafa;
+    background-color: var(--color-secondary);
+}
+
+.invoice-summary-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin: 6px 0;
+}
+
+.invoice-summary-total {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px solid black;
+}

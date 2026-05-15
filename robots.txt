@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /media/
+Disallow: /js/
+Disallow: /database/
+Disallown: .htaccesss
+Craw-delay: 10
+
+User-agent: *
+Sitemap: https://declarerfacile.fr/sitemap.xml
+
