@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="Description SEO Best Project">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+        <!-- ATTENTION LE SITE EST ACTUELLEMENT INVISIBLE POUR LE SEO-->
+        <meta name="robot" content="noindex, nofollow">
+        <!-- ou 
+        <meta name="robot" content="noindex, nofollow">
+         ou
+        <meta name="robot" content="index, nofollow">
+        ou
+        <meta name="robot" content="index, follow">
+         -->
+        <!--Favicon-->
+        <link rel="icon" type="image/png" href="/media/favicon/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/media/favicon/favicon.svg" />
+        <link rel="shortcut icon" href="/media/favicon/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/media/favicon/apple-touch-icon.png" />
+        <link rel="manifest" href="/media/favicon/site.webmanifest" />
+        <!--Titre du site-->
+        <title>Best Project</title>
+        <!--Police du texte : Inter et du titre : Montserrat-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <!--Style-->
+        <link rel="stylesheet" crossorigin href="../src/styles/reset.css">
+        <link rel="stylesheet" crossorigin href="../src/styles/styles.css">
+        <link rel="stylesheet" crossorigin href="../src/styles/print.css" media="print">
+        <!-- Javascript -->
+        <script type="module" crossorigin src="../src/main.jsx"></script>
+    </head>
+ <!-----------------------------------------------DEBUT DU HEADER (à automatiser en JS)----------------------------------------->       
+    <body class="gradient">
+    <!-- https://www.webfalia.com/caracteresspeciaux -->
+        <header class="gradient">
+            <div class="banner gradient">
+                <div class="site-name">
+                    <a href="../" class="lien-logo">
+                        <img id="logo" src="/media/logo/logo.svg">
+                        <h1 class="site-name">Best Project</h1>
+                    </a>
+                </div>
+                <div class="connect">
+                    <button class="btn connect-btn"><a href="/app/">Se connecter</a></button>
+                    <button class="btn connect-btn"><a href="sign-up.html">S'inscrire</a></button>
+                </div>
+            </div>
+            <nav class="menu gradient2">
+                <a href="../">Accueil</a>
+                <a href="../actualites/">Actualités</a>
+                <a href="../produits/">Produits</a>
+                <a href="../tarifs/">Tarifs</a>
+                <a href="../contact/">Contact</a>
+            </nav>     
+        </header>
+ <!------------------------------------------------FIN DU HEADER (à automatiser en JS)------------------------------------------->     
+        <main id="root">
+        </main>
+ <!-----------------------------------------------DEBUT DU FOOTER (à automatiser en JS)------------------------------------------>       
+        <footer class="gradient-foot">
+            <div class="up-btn">
+                <a href="#"><i></i><img src="/media/other/up.svg" class="up-logo"></a>
+            </div>
+            <div class="footer">
+                <div class="footer-left">
+                    <a href="legal.html">Mentions légales</a>
+                    <a href="cgv.html">Conditions générales de ventes</a>
+                    <a href="cgu.html">Conditions générales d'utilisation</a>
+                </div>
+                <div class="footer-right">
+                    <a href="plan.html">Plan du site</a>
+                    <a href="fees.html">Tarifs</a>
+                    <a href="contact.html">Nous contacter</a>
+                </div>
+            </div>
+        </footer>
+ <!-----------------------------------------------FIN DU FOOTER (à automatiser en JS)----------------------------------------->       
+    </body>
+</html>

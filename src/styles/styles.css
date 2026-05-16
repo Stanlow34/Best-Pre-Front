@@ -1,0 +1,566 @@
+/*
+            Author : Steven
+            Date : 25/03/26
+*/
+/* Définition des polices : Titre */
+.montserrat {
+  font-family: 'Montserrat';
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+/* Définition des polices : Texte */
+.inter {
+  font-family: 'Inter';
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+/* Définition des couleurs*/
+:root {
+  --color-primary : #F5CFCE;
+  --color-primary-transp : #F5CFCE90;
+  --color-secondary : #FFD390;
+  --color-secondary-transp : #FFD39090;
+  --color-tertiary : #F57756;
+  --color-tertiary-transp : #F5775690;
+  --color-accent : #E29EE6;
+  --color-accent-transp : #E29EE690;
+  --color-success : #16a34a;
+  --color-warning : #2b261f;
+  --color-danger : #dc2626;
+  --text-color : #1B2429;
+  --text-color-hover : #1a07ee;
+  --bg-color : #ffffff;
+  --font-family-text: 'Inter' , sans-serif;
+  --font-family-title: 'Montserrat' , serif;
+  --font-family-second: Tahoma , sans-serif;
+}
+/************************************************************************/
+/************************************************************************/
+/* Global */
+/************************************************************************/
+/************************************************************************/
+
+/* typo */
+/*----------------------------------------------------------------------*/
+/*----------------------------------------------------------------------*/
+body{
+    background-color: var(--color-primary-transp);
+    background-position: center;
+    background-repeat: repeat;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+    font-family: var(--font-family-text);
+}
+
+h1 , h2 , h3 , h4 , h5 , h6 {
+    font-family: var(--font-family-title);
+    color: var(--text-color); 
+}
+h1{
+    font-size: 2em;
+    font-weight: 700;
+}
+h2{
+    font-size: 1.5em ;
+    font-weight: 700;
+}
+h3{
+    font-size: 1.2em;
+    font-weight: 400;
+}
+h4{
+    font-size: 1em;
+    font-weight: 400;
+}
+h5{
+    font-size: 0.8em;
+    font-weight: 300;
+}
+h6{
+    font-size: 0.5em;
+    font-weight: 300;
+}
+
+/*----------------------------------------------------------------------*/
+/*----------------------------------------------------------------------*/
+
+/* others */
+/*----------------------------------------------------------------------*/
+/*----------------------------------------------------------------------*/
+@media (max-width: 460px){
+  h1.site-name{
+    font-size: 1.8em;
+}
+}
+@media (max-width: 440px){
+  h1.site-name{
+    font-size: 1.5em;
+}
+}
+@media (max-width: 400px){
+  h1.site-name{
+    font-size: 1em;
+}
+}
+@media (max-width: 350px){
+  h1.site-name{
+    display: none;
+}
+    .site-name{
+        justify-content: center;
+    }
+    .connect{
+        justify-content: center;
+    }
+}
+#home-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    max-width: 30px
+}
+/*----------------------------------------------------------------------*/
+/*----------------------------------------------------------------------*/
+
+/* links */
+/*----------------------------------------------------------------------*/
+/*----------------------------------------------------------------------*/
+
+a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+a:hover{
+    color: var(--text-color-hover);
+}
+li{
+    list-style: none;
+}
+
+/*----------------------------------------------------------------------*/
+/*----------------------------------------------------------------------*/
+
+/* forms */
+/*----------------------------------------------------------------------*/
+/*----------------------------------------------------------------------*/
+fieldset.connect{
+    display: inline-block;
+    margin: 20px 0 px;
+    padding: 20px;
+    border: 10px solid var(--text-color);
+    background-color: var(--color-primary-transp);
+    width: 350px;
+    vertical-align: middle;
+    align-items: center;
+    border-style: groove;
+}
+
+fieldset.invoice{
+    display: inline-block;
+    margin: 20px 5px 20px 5px;
+    padding: 20px;
+    border: 10px solid var(--text-color);
+    background-color: var(--color-primary-transp);
+    width: fit-content;
+    align-items: center;
+    border-style: groove;
+}
+
+.customer-field , .item-field{
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+.invoice-head{
+    display: inline-block;
+    width: fit-content ;
+    padding: 3px;
+    align-items: center;
+    align-content: center;
+}
+
+.invoice-item{
+    display: inline-block;
+    width: 10% ;
+    padding: 3px;
+}
+
+label.connect , input.connect , select.connect{
+    display: block;
+    font-size: 16px;
+    font-family: var(--font-family-text);
+    cursor: pointer;
+}
+label {
+    margin-bottom: 5px;
+    font-weight: 700;
+
+}
+label.required:after {
+    content: ' *';
+}
+
+input {
+    width: 100%;
+    margin-bottom: 20px;
+    border: var(--text-color) 2px;
+    background-color: var(--color-accent);
+}
+p .btn {
+    display: inline-block;
+}
+/*----------------------------------------------------------------------*/
+/*----------------------------------------------------------------------*/
+
+/* tables */
+/*----------------------------------------------------------------------*/
+/*----------------------------------------------------------------------*/
+
+.table_corps {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+.table_first {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table_first th,
+.table_first td {
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+.table_first th {
+  background-color: #34495e;
+  color: white;
+}
+
+.table_first tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.table_first tr:hover {
+  background-color: #eaf3ff;
+}
+
+
+/*----------------------------------------------------------------------*/
+/*----------------------------------------------------------------------*/
+
+
+/*----------------------------------------------------------------------*/
+/*----------------------------------------------------------------------*/
+.connect-btn , .btn { 
+    background-color: var(--color-accent);
+    color: var(--text-color);
+    -webkit-box-decoration-break: slice;
+    box-decoration-break: slice;
+    margin: 1%;
+    border: none;
+    border-radius: 999px;
+    display: flex;
+    flex-direction: row;
+    gap: 1%;
+    font-size: 15px;
+    padding: 5px 5px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+.connect-btn a , .btn a {
+    text-decoration: none;
+    color:var(--text-color);
+}
+.connect-btn:hover , .btn:hover {
+    background-color: var(--color-tertiary);
+    color:var(--text-color);
+}
+
+.create-btn {
+    padding: 0;
+    margin: 0;
+    height: 20%;
+    width: 20%;
+    border: 10px solid;
+    border-radius: 999px;
+    cursor: pointer;
+}
+/*----------------------------------------------------------------------*/
+/*----------------------------------------------------------------------*/
+
+/************************************************************************/
+/************************************************************************/
+/* Layout */
+/************************************************************************/
+/************************************************************************/
+
+/* header */
+/*----------------------------------------------------------------------*/
+/*----------------------------------------------------------------------*/
+header{
+    width: 95%;
+    padding: 5px 0px 10px 0px;
+    margin-left: 5%;
+    background-color: var(--color-primary);
+}
+
+.index-header{
+    margin-left: 0;
+    width: 100%;
+}
+/* Le conteneur #banner existe dans le HTML, et React y injecte un second .banner */
+#banner {
+    display: block;
+}
+
+#banner > .banner {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 2%;
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.box-banner {
+    padding: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.name{
+    display: block;
+    align-items: center;
+    gap: 10px;
+    padding: 5px 0px;
+}
+
+.site-name{
+    padding: 5px 0px;
+    display: flex;
+    flex: 1;
+    white-space: nowrap;
+    vertical-align: middle;
+    align-items: center;
+}
+#logo{
+    display: flex;
+    align-items: center;
+    width: 25px;
+    height: auto;
+    padding: 5px 10px;
+}
+.lien-logo{
+    display: flex;
+    vertical-align: middle;
+}
+.lien-logo:hover{
+    opacity: 0.5;
+}
+.connect{
+    margin: 0;
+    background-color:none;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0px;
+    right:2%;
+    width: 100%;
+}
+/*----------------------------------------------------------------------*/
+/*----------------------------------------------------------------------*/
+
+/* nav */
+/*----------------------------------------------------------------------*/
+/*----------------------------------------------------------------------*/
+.menu {
+    color: var(--text-color);
+    /*background-color: var(--color-primary-transp);*/
+    padding: 10px 0px;
+    display: flex;
+    gap: 12%;
+    font-size: 15px;
+    justify-content: center;
+    vertical-align: middle;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.sous_menu {
+    color: var(--text-color);
+    height: 5vh;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin: -40px auto 0px auto;
+    font-size: 15px;
+    font-weight: 700;
+    justify-items: center;
+    align-items: center;
+    width: 95%;
+    border-radius: 999px;
+}
+
+.menu a , .sous_menu a {
+    color: var(--text-color);
+    border-radius: 8px;
+    display: block;
+    height: 10px;
+    border: 2px solid transparent;
+    align-content: center;
+}
+.menu a:after, .sous_menu a:after {
+    display: flex;
+    content: '';
+    height: 3px;
+    width: 0;
+    background-color: var(--text-color);
+    transition: all 0.3s ease-in-out;
+}
+.menu a:hover:after , .sous_menu a:hover:after {
+    width: 100%;
+}
+.menu .active , .sous_menu .active {
+    background-color: var(--color-tertiary);
+    /*background-color: var(--color-accent);*/
+    /*border-color: var(--color-secondary);*/
+}
+.gradient{
+    background:linear-gradient(to right , var(--color-primary) 30%, var(--color-secondary)95%);
+}
+.gradient-reverse{
+    background:linear-gradient(to left , var(--color-primary) 30%, var(--color-secondary)95%);
+}
+.gradient-menu{
+    background:linear-gradient(to left , var(--color-accent) 30%, var(--color-secondary)95%);
+}
+.gradient-sous-menu{
+    background:linear-gradient(to left , var(--color-accent) 30%, var(--color-secondary)95%);
+}
+/*----------------------------------------------------------------------*/
+/*----------------------------------------------------------------------*/
+
+/* main */
+/*----------------------------------------------------------------------*/
+/*----------------------------------------------------------------------*/
+main{
+    padding-top: 10px;
+    margin-left: 5%;
+    width: 95%;
+}
+.index-footer{
+    margin-left: 0;
+    width: 100%;
+}
+article{
+    margin: 10px;
+    text-align: center;
+}
+article h2 {
+    display: inline-block;
+    background-color: var(--color-primary-transp);
+}
+article p {
+    text-align: justify;
+}
+/*----------------------------------------------------------------------*/
+/*----------------------------------------------------------------------*/
+
+/* aside */ 
+/*----------------------------------------------------------------------*/
+/*----------------------------------------------------------------------*/
+
+/*----------------------------------------------------------------------*/
+/*----------------------------------------------------------------------*/
+
+/* footer */
+/*----------------------------------------------------------------------*/
+/*----------------------------------------------------------------------*/
+footer{
+    display: block;
+    bottom: 0;
+    margin-left: 5%;
+    width: 95%;
+}
+.index-main{
+    margin-left: 0;
+    width: 100%;
+}
+.footer{
+    display: flex;
+    justify-content: center;
+    padding: 2%;
+}
+.footer-left , .footer-right{
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
+    padding: 0% 5%;   
+    left: 0;
+}
+.up-btn{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--color-accent);
+    padding: 1px 5px;
+}
+.up-logo{
+    width: 25px;
+    height: auto;
+}
+.gradient-foot{
+    background:linear-gradient(to left , var(--color-accent) 30%, var(--color-secondary)95%);
+}
+.footer a:after{
+    display: flex;
+    content: '';
+    height: 1px;
+    width: 0;
+    background-color: var(--text-color);
+    transition: all 0.3s ease-in-out;
+}
+.footer a:hover:after{
+    width: 100%;
+}
+/*----------------------------------------------------------------------*/
+/*----------------------------------------------------------------------*/
+/*----------------------------------------------------------------------*/
+/*----------------------------------------------------------------------*/
+.EnCours{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    gap: 20px;
+}
+/*----------------------------------------------------------------------*/
+/*----------------------------------------------------------------------*/
+/*----------------------------------------------------------------------*/
+/*----------------------------------------------------------------------*/
+
+.prod-btn {
+    background-color: #4CAF50; /* Vert */
+}
+
+.staging-btn {
+    background-color: #FF9800; /* Orange */
+} 
+.dev-btn {
+    background-color: #2196F3; /* Bleu */
+}
