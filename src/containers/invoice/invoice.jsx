@@ -35,6 +35,17 @@ const InvoiceTable = ({ refreshTrigger }) => {
       fetchInvoices();
     }
   }, [refreshTrigger]);
+    const [isOpen, setIsOpen] = useState(false);
+    const [selectedCustomer, setSelectedCustomer] = useState(null);
+    const [selectedInvoice, setSelectedInvoice] = useState(null);
+
+    const handleRowClick = async (invoice) => {
+        const response = await fetch(`${API_BASE}/customers/${invoice.id_customer}`);
+        const customer = await response.json();
+        setSelectedCustomer(customer);
+        setSelectedInvoice(invoice);
+        setIsOpen(true);
+    };
 
   if (loading) return <p>Chargement…</p>;
   if (error) return <p>Erreur: {error}</p>;
@@ -44,16 +55,16 @@ const InvoiceTable = ({ refreshTrigger }) => {
       <table className="table_first table_invoice_table">
         <thead>
           <tr>
-            <th>ID Schema</th>
-            <th>Id facture</th>
+            {/*<th>ID Schema</th>
+            <th>Id facture</th>*/}
             <th>Numéro facture</th>
             <th>Date facture</th>
-            <th>Date d'envoi</th>
+            {/*<th>Date d'envoi</th>
             <th>Numéro BDC</th>
             <th>Numéro BDL</th>
-            <th>Numéro Devis</th>
+            <th>Numéro Devis</th>*/}
             <th>Client</th>
-            <th>Id article</th>
+            {/*<th>Id article</th>
             <th>Nom article</th>
             <th>Montant unitaire HT</th>
             <th>Quantité</th>
@@ -71,9 +82,9 @@ const InvoiceTable = ({ refreshTrigger }) => {
             <th>Montant HT global facture</th>
             <th>Id taxe facture</th>
             <th>Montant taxe facture</th>
-            <th>Montant TTC facture</th>
-            <th>Montant HT final facture</th>
-            <th>Montant TVA final facture</th>
+            <th>Montant TTC facture</th>*/}
+            <th><div>Montant HT</div><div>Montant TVA</div><div>Montant TTC</div></th>
+            {/*<th>Montant TVA final facture</th>
             <th>Pourcentage réduction TTC facture</th>
             <th>Montant réduction TTC facture</th>
             <th>Montant TTC final facture</th>
@@ -82,32 +93,36 @@ const InvoiceTable = ({ refreshTrigger }) => {
             <th>Id type paiement</th>
             <th>Type paiement</th>
             <th>Id délai paiement</th>
-            <th>Délai paiement</th>
+            <th>Délai paiement</th>*/}
             <th>Date paiement</th>
-            <th>Id frais</th>
+            {/*<th>Id frais</th>
             <th>Frais délai</th>
             <th>Id pénalité</th>
             <th>Pénalité paiement</th>
             <th>Id escompte</th>
             <th>Escompte paiement</th>
             <th>Id mention</th>
-            <th>Mention facture</th>
-            <th>PDF</th>
+            <th>Mention facture</th>*/}
+            <th>Facture</th>
           </tr>
         </thead>
         <tbody>
           {invoices.map((invoice) => (
-            <tr key={invoice.id}>
-                <td>{invoice.id_schema}</td>
-                <td>{invoice.id}</td>
+            <tr
+            key={invoice.id}
+            onClick={() => handleRowClick(invoice)}
+            style={{ cursor: 'pointer' }}
+            >
+                {/*<td>{invoice.id_schema}</td>
+                <td>{invoice.id}</td>*/}
                 <td>{invoice.num_invoice}</td>
-                <td>{invoice.date_invoice}</td>
-                <td>{invoice.selling_invoice}</td>
+                <td>{new Date(invoice.date_invoice).toLocaleDateString('fr-FR')}</td>
+                {/*<td>{invoice.selling_invoice}</td>
                 <td>{invoice.num_bdc}</td>
                 <td>{invoice.num_bdl}</td>
-                <td>{invoice.num_devis}</td>
-                <td>{invoice.id_customer}</td>
-                <td>{invoice.id_item}</td>
+                <td>{invoice.num_devis}</td>*/}
+                <td><div>{invoice.id_customer}</div><div>{invoice.customer?.denomination_customer}</div><div>{invoice.customer?.name_customer}</div><div>{invoice.customer?.firstname_customer}</div></td>
+                {/*<td>{invoice.id_item}</td>
                 <td>{invoice.name_item}</td>
                 <td>{invoice.ht_unit_item}</td>
                 <td>{invoice.quantity_item}</td>
@@ -125,20 +140,18 @@ const InvoiceTable = ({ refreshTrigger }) => {
                 <td>{invoice.ht_invoice_global}</td>
                 <td>{invoice.id_tax_invoice}</td>
                 <td>{invoice.tax_amount_invoice}</td>
-                <td>{invoice.ttc_invoice}</td>
-                <td>{invoice.ht_invoice_final}</td>
-                <td>{invoice.tva_invoice_final}</td>
-                <td>{invoice.reduce_percent_ttc_invoice}</td>
+                <td>{invoice.ttc_invoice}</td>*/}
+                <td><div>{new Number(invoice.ht_invoice_final).toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' })}</div><div>{new Number(invoice.tva_invoice_final).toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' })}</div><div>{new Number(invoice.ttc_invoice_final).toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' })}</div></td>
+                {/*<td>{invoice.reduce_percent_ttc_invoice}</td>
                 <td>{invoice.reduce_amount_ttc_invoice}</td>
-                <td>{invoice.ttc_invoice_final}</td>
                 <td>{invoice.id_tax_final}</td>
                 <td>{invoice.tax_amount_final}</td>
                 <td>{invoice.id_type_payment}</td>
                 <td>{invoice.type_payment}</td>
                 <td>{invoice.id_delay_payment}</td>
-                <td>{invoice.delay_payment}</td>
+                <td>{invoice.delay_payment}</td>*/}
                 <td>{invoice.date_payment}</td>
-                <td>{invoice.id_fees}</td>
+                {/*<td>{invoice.id_fees}</td>
                 <td>{invoice.fees_delay}</td>
                 <td>{invoice.id_penalty}</td>
                 <td>{invoice.penalty_payment}</td>
@@ -146,6 +159,7 @@ const InvoiceTable = ({ refreshTrigger }) => {
                 <td>{invoice.escompte_payment}</td>
                 <td>{invoice.id_mention}</td>
                 <td>{invoice.invoice_mention}</td>
+                <td>{invoice.invoice_pdf}</td>*/}
                                 <td>
                                     {invoice.invoice_pdf ? (
                                         <a href={getPdfHref(invoice)} target="_blank" rel="noreferrer">
@@ -154,9 +168,37 @@ const InvoiceTable = ({ refreshTrigger }) => {
                                     ) : ('-')}
                                 </td>
             </tr>
-          ))}
-        </tbody>
-      </table>
+            ))}
+            </tbody>
+        </table>
+        {isOpen && selectedCustomer && (
+        <div className="modal-overlay" onClick={() => setIsOpen(false)}>
+            <div className="modal" onClick={(e) => e.stopPropagation()}>
+                <div>
+                    <h2>Facture {selectedInvoice?.num_invoice}</h2>
+                    <button type="button" onClick={() => setIsOpen(false)} style={{ float: 'right' }}>x</button>
+                </div>
+                <div className="invoice-details">
+                    <div className="invoice-info">
+                        <h3>Informations facture</h3>
+                        <p><strong>Numéro :</strong> {selectedInvoice?.num_invoice}</p>
+                        <p><strong>Date :</strong> {new Date(selectedInvoice?.date_invoice).toLocaleDateString('fr-FR')}</p>
+                        <p><strong>Montant HT :</strong> {new Number(selectedInvoice?.ht_invoice_final).toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' })}</p>
+                        <p><strong>Montant TVA :</strong> {new Number(selectedInvoice?.tva_invoice_final).toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' })}</p>
+                        <p><strong>Montant TTC :</strong> {new Number(selectedInvoice?.ttc_invoice_final).toLocaleString('fr-FR', { style: 'currency', currency: 'EUR' })}</p>
+                        <p><strong>Date paiement :</strong> {selectedInvoice?.date_payment ? new Date(selectedInvoice.date_payment).toLocaleDateString('fr-FR') : '-'}</p>
+                    </div>
+                    <div className="customer-info">
+                        <h3>Informations client</h3>
+                        <p><strong>Dénomination :</strong> {selectedCustomer?.denomination_customer}</p>
+                        <p><strong>Nom :</strong> {selectedCustomer?.name_customer} {selectedCustomer?.firstname_customer}</p>
+                        <p><strong>Email :</strong> {selectedCustomer?.email_customer}</p>
+                        <p><strong>Téléphone :</strong> {selectedCustomer?.phone_customer}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        )}  
     </div>
   );
 };
