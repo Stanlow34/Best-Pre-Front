@@ -1,0 +1,3 @@
+DATABASE_URL=mysql://u347454543_smartin:Admin34000@31.97.198.49:3306/u347454543_bestproject
+VITE_APP_NAME=DeclarerFacile-preprod
+VITE_API_URL=https://back.declarerfacile.fr/api
