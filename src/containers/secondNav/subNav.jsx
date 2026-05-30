@@ -1,63 +1,66 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import './subNav.css';
 
-const Sous_menu_invoice = () => (
+
+const Sub_nav_sell = () => (
   <nav className="sous_menu gradient-sous-menu">
-    <a href="../ventes/?view=invoice" className="class1" id='class1'>Factures</a>
-    <a href="../ventes/?view=items#items_main" className="class2" id='class2'>Articles</a>
-    <a href="../ventes/?view=stock" className="class3" id='class3'>Stock</a>
-    <a href="../ventes/?view=invoice-settings" className="class4" id='class4'>Paramètres</a>
+    <Link to="../ventes/factures" className="class1" id='class1'>Factures</Link>
+    <Link to="../ventes/articles" className="class2" id='class2'>Articles</Link>
+    <Link to="../ventes/stock" className="class3" id='class3'>Stock</Link>
+    <Link to="../ventes/parametres" className="class4" id='class4'>Paramètres</Link>
   </nav>
 );
 
-const Sous_menu_crm = () => (
+const Sub_nav_crm = () => (
   <nav className="sous_menu gradient-sous-menu">
-    <a href="../clients/?view=crm" className="class1" id='class1'>Clients</a>
-    <a href="../clients/?view=mailing" className="class2" id='class2'>Mailing</a>
-    <a href="../clients/?view=crm-statistics" className="class3" id='class3'>Statistiques</a>
-    <a href="../clients/?view=crm-settings" className="class4" id='class4'>Paramètres</a>
+    <Link to="../crm/clients" className="class1" id='class1'>Clients</Link>
+    <Link to="../crm/mailing" className="class2" id='class2'>Mailing</Link>
+    <Link to="../crm/statistiques" className="class3" id='class3'>Statistiques</Link>
+    <Link to="../crm/parametres" className="class4" id='class4'>Paramètres</Link>
   </nav>
 );
 
-const Sous_menu_bank = () => (
+const Sub_nav_bank = () => (
   <nav className="sous_menu gradient-sous-menu">
-    <a href="../banque/?view=bank" className="class1" id='class1'>Banques</a>
-    <a href="../banque/?view=bank-detail" className="class2" id='class2'>Détail</a>
-    <a href="../banque/?view=bank-attached" className="class3" id='class3'>Rattachement</a>
-    <a href="../banque/?view=bank-settlement" className="class4" id='class4'>Règlements</a>
-    <a href="../banque/?view=bank-settings" className="class5" id='class5'>Paramètres</a>
+    <Link to="../banque/visuel" className="class1" id='class1'>Banques</Link>
+    <Link to="../banque/detail" className="class2" id='class2'>Détail</Link>
+    <Link to="../banque/rattachement" className="class3" id='class3'>Rattachement</Link>
+    <Link to="../banque/settlement" className="class4" id='class4'>Règlements</Link>
+    <Link to="../banque/parametres" className="class5" id='class5'>Paramètres</Link>
   </nav>
 );
 
-const Sous_menu_tax = () => (
+const Sub_nav_tax = () => (
   <nav className="sous_menu gradient-sous-menu">
-    <a href="../impots/?view=tax-business" className="class1" id='class1'>TVA</a>
-    <a href="../impots/?view=tax-personal" className="class2" id='class2'>Impôts</a>
-    <a href="../impots/?view=tax-advice" className="class3" id='class3'>Conseils</a>
-    <a href="../impots/?view=tax-other" className="class4" id='class4'>Autres</a>
-    <a href="../impots/?view=tax-settings" className="class5" id='class5'>Paramètres</a>
+    <Link to="../impots/professionnels" className="class1" id='class1'>TVA</Link>
+    <Link to="../impots/tva" className="class1" id='class1'>TVA</Link>
+    <Link to="../impots/irpp" className="class2" id='class2'>Impôts</Link>
+    <Link to="../impots/conseils" className="class3" id='class3'>Conseils</Link>
+    <Link to="../impots/autres" className="class4" id='class4'>Autres</Link>
+    <Link to="../impots/parametres" className="class5" id='class5'>Paramètres</Link>
   </nav>
 );
 
-const Sous_menu_revenue = () => (
+const Sub_nav_revenue = () => (
   <nav className="sous_menu gradient-sous-menu">
-    <a href="../revenue/?view=revenue-summary" className="class1" id='class1'>Récapitulatif</a>
-    <a href="../revenue/?view=revenue" className="class2" id='class2'>Revenus</a>
-    <a href="../revenue/?view=revenue-advice" className="class3" id='class3'>Conseils</a>
-    <a href="../revenue/?view=revenue-other" className="class4" id='class4'>Autres</a>
-    <a href="../revenue/?view=revenue-settings" className="class5" id='class5'>Paramètres</a>
+    <Link to="../remuneration/recapitulatif" className="class1" id='class1'>Récapitulatif</Link>
+    <Link to="../remuneration/detail" className="class2" id='class2'>Revenus</Link>
+    <Link to="../remuneration/conseils" className="class3" id='class3'>Conseils</Link>
+    <Link to="../remuneration/autres" className="class4" id='class4'>Autres</Link>
+    <Link to="../remuneration/parametres" className="class5" id='class5'>Paramètres</Link>
   </nav>
 );
 
-const Sous_menu_building = () => (
+const Sub_nav_building = () => (
   <nav className="sous_menu gradient-sous-menu">
-    <a href="../building/?view=building-list" className="class1" id='class1'>Liste</a>
-    <a href="../building/?view=building-revenue" className="class2" id='class2'>Revenus</a>
-    <a href="../building/?view=building-advice" className="class3" id='class3'>Conseils</a>
-    <a href="../building/?view=building-other" className="class4" id='class4'>Autres</a>
-    <a href="../building/?view=building-settings" className="class5" id='class5'>Paramètres</a>
+    <Link to="../immobilier/liste" className="class1" id='class1'>Liste</Link>
+    <Link to="../immobilier/revenue" className="class2" id='class2'>Revenus</Link>
+    <Link to="../immobilier/conseils" className="class3" id='class3'>Conseils</Link>
+    <Link to="../immobilier/autres" className="class4" id='class4'>Autres</Link>
+    <Link to="../immobilier/parametres" className="class5" id='class5'>Paramètres</Link>
   </nav>
 );
 
 
-export {Sous_menu_invoice , Sous_menu_crm, Sous_menu_bank, Sous_menu_tax, Sous_menu_revenue, Sous_menu_building};
+export {Sub_nav_sell , Sub_nav_crm, Sub_nav_bank, Sub_nav_tax, Sub_nav_revenue, Sub_nav_building};

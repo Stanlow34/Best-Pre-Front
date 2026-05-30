@@ -319,9 +319,7 @@ header{
     width: 100%;
 }
 /* Le conteneur #banner existe dans le HTML, et React y injecte un second .banner */
-#banner {
-    display: block;
-}
+
 
 #banner > .banner {
     display: grid;
@@ -462,7 +460,7 @@ main{
     margin-left: 5%;
     width: 95%;
 }
-.index-footer{
+.index-main{
     margin-left: 0;
     width: 100%;
 }
@@ -491,19 +489,18 @@ article p {
 /*----------------------------------------------------------------------*/
 /*----------------------------------------------------------------------*/
 footer{
-    display: block;
+    display: flex;
     bottom: 0;
-    margin-left: 5%;
-    width: 95%;
+    width: 100%;
 }
-.index-main{
+.index-footer{
     margin-left: 0;
     width: 100%;
 }
 .footer{
     display: flex;
     justify-content: center;
-    padding: 2%;
+    padding: 0;
 }
 .footer-left , .footer-right{
     display: flex;
@@ -511,17 +508,6 @@ footer{
     flex-direction: column;
     padding: 0% 5%;   
     left: 0;
-}
-.up-btn{
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: var(--color-accent);
-    padding: 1px 5px;
-}
-.up-logo{
-    width: 25px;
-    height: auto;
 }
 .gradient-foot{
     background:linear-gradient(to left , var(--color-accent) 30%, var(--color-secondary)95%);
@@ -536,6 +522,17 @@ footer{
 }
 .footer a:hover:after{
     width: 100%;
+}
+.up-btn{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--color-accent);
+    padding: 1px 5px;
+}
+.up-logo{
+    width: 25px;
+    height: auto;
 }
 /*----------------------------------------------------------------------*/
 /*----------------------------------------------------------------------*/

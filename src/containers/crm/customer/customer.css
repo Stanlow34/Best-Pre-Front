@@ -1,0 +1,54 @@
+@import '../../../styles/styles.css';
+.customer-create {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px 24px; /* (lignes, colonnes) */
+    align-items: start;
+    padding: 20px 40px;
+}
+
+.customer_field{
+  margin: 0;           
+}
+
+.customer_field label{
+  display: block;
+  margin-bottom: 6px;
+}
+
+.customer_field input{
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.create_btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.create_customer {
+    text-align: center;
+    width: 100%;
+    padding: 10px 0px;
+}
+
+.modal-overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-customer{
+  background: white;
+  padding: 10px 10px 10px 10px;
+  border-radius: 8px;
+  min-width: 80%;
+  max-height: 60%;
+  overflow-y: auto;     /* ascenseur vertical si besoin */
+  margin:100% 10%;
+}

@@ -15,11 +15,11 @@
         <meta name="robot" content="index, follow">
          -->
         <!--Favicon-->
-        <link rel="icon" type="image/png" href="./media/favicon/favicon-96x96.png" sizes="96x96" />
-        <link rel="icon" type="image/svg+xml" href="./media/favicon/favicon.svg" />
-        <link rel="shortcut icon" href="./media/favicon/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="./media/favicon/apple-touch-icon.png" />
-        <link rel="manifest" href="./media/favicon/site.webmanifest" />
+        <link rel="icon" type="image/png" href="../media/favicon/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="../media/favicon/favicon.svg" />
+        <link rel="shortcut icon" href="../media/favicon/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="../media/favicon/apple-touch-icon.png" />
+        <link rel="manifest" href="../media/favicon/site.webmanifest" />
         <!--Titre du site-->
         <title>Best Project</title>
         <!--Police du texte : Inter et du titre : Montserrat-->
@@ -27,44 +27,32 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <!--Style-->
-        <link rel="stylesheet" href="./src/styles/reset.css">  
-        <link rel="stylesheet" href="./src/styles/styles.css">  
-        <link rel="stylesheet" href="./src/styles/print.css" media="print">  
+        <link rel="stylesheet" crossorigin href="./src/styles/reset.css">
+        <link rel="stylesheet" crossorigin href="./src/styles/styles.css">
+        <link rel="stylesheet" crossorigin href="./src/styles/print.css">
         <!--Script-->
-      <script type="module" crossorigin src="./src/main.jsx"></script>
+        <script type="module" crossorigin src="./src/main.jsx"></script>
     </head>
- <!-----------------------------------------------DEBUT DU HEADER (à automatiser en JS)----------------------------------------->       
+ <!------------------------------Body--------------------------------->       
     <body class="gradient">
-    <!-- https://www.webfalia.com/caracteresspeciaux -->
-        <header class="gradient index-header">
-            <div class="banner index-banner gradient">
-                <div class="site-name">
-                    <a href="../" class="lien-logo">
-                        <img id="logo" src="./media/logo/logo.svg" alt="Logo Best Project">
-                        <h1 class="site-name">Best Project</h1>
-                    </a>
-                </div>
-                <div class="connect">
-                <!--  <button class="btn connect-btn"><a href="./app/home/">Se connecter</a></button>
-                    <button class="btn connect-btn"><a href="sign-up.html">S'inscrire</a></button> -->
-                </div>
+        <header class="gradient" id="header">
+            <div id="banner" class="banner gradient">
             </div>
-            <!-- <nav class="menu gradient2">
-                <a href="../" class="active">Accueil</a>
-                <a href="../actualites/">Actualités</a>
-                <a href="../produits/">Produits</a>
-                <a href="../tarifs/">Tarifs</a>
-                <a href="../contact/">Contact</a>
-            </nav>-->   
+            <nav class="menu gradient2" id="nav_app">
+            </nav>
+            <nav id="sous-menu-invoice">
+            </nav>
         </header>
- <!------------------------------------------------FIN DU HEADER (à automatiser en JS)------------------------------------------->     
-        <main class="index-main" id="root">
-            
+
+        <main class="main" id="main">
+            <section class="gradient main" id="root"></section>
+            <section class="connection-test" id="connection-test"></section>
+            <section class="appli" id="appli"></section>
         </main>
-        <section class="connection-test" id="connection-test"></section>
- <!-----------------------------------------------DEBUT DU FOOTER (à automatiser en JS)------------------------------------------>       
-        <footer class="gradient-foot index-footer" id="footer">
+
+        <footer class="footer" id="footer">
+            <div class="gradient-foot index-footer" id="footer-app"></div>
         </footer>
-<!-----------------------------------------------FIN DU FOOTER (à automatiser en JS)----------------------------------------->       
+
     </body>
 </html>

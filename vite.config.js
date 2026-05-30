@@ -27,19 +27,6 @@ export default defineConfig(({ mode }) => {
         input: {
           index: resolve(rootDir, "index.html"),
           i404: resolve(rootDir, "404.html"),
-
-          actualites: resolve(rootDir, "actualites/index.html"),
-          contact: resolve(rootDir, "contact/index.html"),
-          produits: resolve(rootDir, "produits/index.html"),
-          tarifs: resolve(rootDir, "tarifs/index.html"),
-
-          banque: resolve(rootDir, "app/banque/index.html"),
-          clients: resolve(rootDir, "app/clients/index.html"),
-          home: resolve(rootDir, "app/home/index.html"),
-          immobilier: resolve(rootDir, "app/immobilier/index.html"),
-          impots: resolve(rootDir, "app/impots/index.html"),
-          revenue: resolve(rootDir, "app/revenue/index.html"),
-          ventes: resolve(rootDir, "app/ventes/index.html"),
         },
       },
     },
